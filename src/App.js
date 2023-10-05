@@ -1,4 +1,5 @@
 import { useState } from "react";
+import confetti from "canvas-confetti";
 
 function Square({ value, onSquareClick }) {
   return (
@@ -26,6 +27,7 @@ function Board({ xIsNext, squares, onPlay }) {
   let status;
   if (winner) {
     status = "Winner: " + winner;
+    confetti()
   } else {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
